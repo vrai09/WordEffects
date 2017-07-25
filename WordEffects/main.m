@@ -27,15 +27,15 @@ int main(int argc, const char * argv[]) {
             printf("Your string is %s\n", inputChars);
             
             NSString *inputString = [NSString stringWithUTF8String:inputChars];
+            NSMutableString *mutableInputString = [NSMutableString new];
+            [mutableInputString appendString:inputString];
             NSLog(@"Input was: %@", inputString);
             
             
             if([inputOptionNumString isEqualTo:@"1\n"]) {
-                NSString *upperCaseString = [inputString uppercaseString];
-                NSLog(@"%@", upperCaseString);
+                NSLog(@"%@",[mutableInputString uppercaseString]);
             }else if([inputOptionNumString isEqualTo:@"2\n"]) {
-                NSString *lowerCaseString = [inputString lowercaseString];
-                NSLog(@"%@", lowerCaseString);
+                NSLog(@"%@", [mutableInputString lowercaseString]);
             }else if([inputOptionNumString isEqualTo:@"3\n"]) {
                 int numberizedString = [inputString intValue];
                 NSLog(@"%d", numberizedString);
